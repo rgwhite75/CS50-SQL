@@ -30,9 +30,11 @@ The database will not support specifically for:
 ## Representation
 
 ### Entities
+
 This database includes the following tables:
 
 Artists
+
 The Artists table includes the following:
 
 * Artist_id – this is the unique id of the artist, formatted as an INTEGER and does not allow NULL values. This column is set as the PRIMARY KEY.
@@ -42,6 +44,7 @@ The Artists table includes the following:
 * Formed_year – is the year the artist/band was created, formatted as an INTEGER.
 
 Albums
+
 The Albums table includes the following:
 * album_id - this is the unique id of the album, formatted as an INTEGER and does not allow NULL values. This column is set as the PRIMARY KEY. 
 * artist_id – this is the id of the artist, formatted as an INTEGER and does not allow for NULL values. This column has a FOREIGN KEY constraint applied and REFERENCES to the ARTIST table.
@@ -50,6 +53,7 @@ The Albums table includes the following:
 * record_label – the is the name of the record label who produced the album.
 
 Songs
+
 The Songs table includes the following:
 * song_id - this is the unique id of the song, formatted as an INTEGER and does not allow NULL values. This column is set as the PRIMARY KEY. 
 * album_id - this is the id of the album, formatted as an INTEGER and does not allow for NULL values. This column has a FOREIGN KEY constraint applied and REFERENCES to the ALBUMS table.
@@ -58,6 +62,7 @@ The Songs table includes the following:
 * duration_seconds – this is how long the song is in seconds, formatted as an integer. This column has a CHECK constraint where the value, if any, must be greater than 0 seconds.
 
 Billboard Hits
+
 The Billboard Hits table contains the following:
 * hit_id - this is the unique id of the billboard hit, formatted as an INTEGER and does not allow NULL values. This column is set as the PRIMARY KEY. 
 * song_id - this is the id of the song, formatted as an INTEGER and does not allow for NULL values. This column has a FOREIGN KEY constraint applied and REFERENCES to the SONGS table.
@@ -71,12 +76,14 @@ The Billboard Hits table contains the following:
 This database includes the following views:
 
 Song Details
+
 The Song Details view contains the following:
 * song_id, song_title, track_number, and duration_seconds from the songs table.
 * album_id, album_title, and release_date from the albums table, joined to the songs table by the album_id.
 * artist_id, artist_name, and genre from the artist table, joined to the albums table by the artist_id.
 
 Billboard Hit Details
+
 The Billboard Hit Details view contains the following:
 * hit_id, chart_year, peak_position, weeks_on_chart, weeks_at_number_1, and debut_date from the billboard_hits table.
 * song_title from the SONGS table, joined to the billboard_hits table on the song_id.
@@ -84,18 +91,18 @@ The Billboard Hit Details view contains the following:
 * artist_name and genre from the artists table, joined to the albums table by the artist_id.
 
 Number One Hits
+
 The Number on Hits view contains the following:
 * chart_year, song_title, artist_name, album_title, and weeks_at_number_1 where the peak_position = 1.
 
 Artist Chart Summary
+
 The Artist Chart Summary view contains the following:
 * artist_id, artist_name, and genre from the artists table.
 * total_chart_hits - is the total count of hit_id from the billboard_hits table, joined to the songs table by the song_id and calculated by count(hit_id)
 * best_peak_position – is the highest position of the given song as a billboard hit, joined to the songs table by the song_id and calculated as min(peak_position).
 * total_weeks_at_number_1 – is the total number of times the given song was ranked as number one on the billboard hits chart, joined to the songs table by song_id, and is calculated by coalesce(total number of weeks at number 1, 0).
 * total_weeks_on_chart – is the total number of weeks the give song was on the billboard hits chart, joined to the songs table by song_id, and is calculated by coalesce( total weeks on chart, 0).
-
-
 
 ### Relationships
 
