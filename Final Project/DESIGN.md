@@ -3,7 +3,7 @@
 By Richard White
 
 
-Video overview: [<(https://www.youtube.com/watch?v=FsgrW0k0TQQ&list=PLcwNmaw455-w)>]
+Video overview: (https://www.youtube.com/watch?v=FsgrW0k0TQQ&list=PLcwNmaw455-w)
 
 ## Scope
 
