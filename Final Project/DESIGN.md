@@ -4,6 +4,9 @@ By Richard White
 
 Video overview: https://www.youtube.com/watch?v=FsgrW0k0TQQ&list=PLcwNmaw455-w
 
+
+
+![Project Screenshot](music_database.jpg)
 ## Scope
 
 The database includes the information needed to perform research on artists, their albums, and related songs. 
