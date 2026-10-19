@@ -4,9 +4,6 @@ By Richard White
 
 Video overview: https://www.youtube.com/watch?v=FsgrW0k0TQQ&list=PLcwNmaw455-w
 
-
-
-![Project Screenshot](music_database.jpg)
 ## Scope
 
 The database includes the information needed to perform research on artists, their albums, and related songs. 
@@ -108,6 +105,11 @@ The Artist Chart Summary view contains the following:
 * total_weeks_on_chart – is the total number of weeks the give song was on the billboard hits chart, joined to the songs table by song_id, and is calculated by coalesce( total weeks on chart, 0).
 
 ### Relationships
+
+Relationship Diagram
+
+![Project Screenshot](music_database.jpg)
+
 
 Albums and Artists
 * Artist_id – Foreign Key referencing table artist(artist_id).
